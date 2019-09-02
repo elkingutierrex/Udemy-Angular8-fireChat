@@ -26,7 +26,7 @@ export class ChatComponent {
     }
 
     this._cs.agregarMensaje( this.mensaje )
-                  .then( ()=> console.log ('Mensaje enviado'))
+                  .then( ()=> this.mensaje = '')
                   .catch( (err)=> console.error('Error al enviar', err))
 
   }
