@@ -3,22 +3,22 @@
 <hr>
 <div class="app-mensajes" id="app-mensajes">
 
-  <div class="text-right">
+  <div class="text-right" *ngFor="let chat of _cs.chats">
     <span class="badge badge-info">Info</span>
 
     <p>
-      Ese es un mensajr de chat
+      {{ chat.mensaje }}
     </p>
   </div>
 
 
-  <div>
+  <!-- <div>
     <span class="badge badge-success">Info</span>
 
     <p>
       Ese es un mensajr de chat
     </p>
-  </div>
+  </div> -->
 
   
   
