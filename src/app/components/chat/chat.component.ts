@@ -9,12 +9,25 @@ import { ChatService } from '../../providers/chat.service';
 export class ChatComponent {
 
   mensaje: string = ""; 
+  elemento: any;
 
   constructor( public _cs: ChatService) { 
 
     this._cs.cargarMensajes()
-        .subscribe();
+        .subscribe( () => {
+
+          setTimeout( ()=> {
+            this.elemento.scrollTop = this.elemento.scrollHeight
+          }, 100);
+          
+        });
       
+  }
+
+  ngOnInit() {
+
+    this.elemento = document.getElementById('app-mensajes');
+
   }
 
   enviar_mensaje(){
@@ -29,9 +42,6 @@ export class ChatComponent {
                   .then( ()=> this.mensaje = '')
                   .catch( (err)=> console.error('Error al enviar', err))
 
-  }
-
-  ngOnInit() {
   }
 
 }
