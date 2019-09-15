@@ -12,10 +12,11 @@
 
   <app-login *ngIf="!_cs.usuario.uid"></app-login>
   
-  <!-- <div class="chat-window">
+  <div class="chat-window" 
+       *ngIf="_cs.usuario.uid">
 
       <app-chat></app-chat>
 
-  </div> -->
+  </div>
 
 </div>
